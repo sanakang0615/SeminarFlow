@@ -128,8 +128,7 @@ export default function Example() {
                 Uncover New Insights in Every Lab Seminar 
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-            Seminar Flow는 AI 기반의 음성 인식과 자연어 처리 기술로 세미나에서 나오는 모든 질문과 답변을 분석합니다. 
-               연구 세미나를 더 효율적으로 진행하고, 깊이 있는 분석으로 시간을 절약하세요.
+            랩 세미나의 모든 질문을 AI 기반 음성 인식과 자연어 처리 기술로 분석하고 시각화합니다. 연구 노트의 버전 관리를 간소화하고 자료 조사 시간을 줄여 연구 효율을 높여보세요.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
