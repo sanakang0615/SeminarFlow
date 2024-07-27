@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "details": [
+      { "label": "Page No", "value": "8" },
+      { "label": "Page Topic", "value": "Data" },
+      { "label": "Who asked", "value": "Anonymous 3" },
+      { "label": "Content", "value": "Treatment Group은 채팅을 하는 방식이고, Control Group 인가요?" }
+    ]
+  },
+  {
+    "id": 2,
+    "details": [
+      { "label": "Page No", "value": "9" },
+      { "label": "Page Topic", "value": "Analysis" },
+      { "label": "Who asked", "value": "Anonymous 4" },
+      { "label": "Content", "value": "How does the Control Group differ from the Treatment Group?" }
+    ]
+  }
+]
