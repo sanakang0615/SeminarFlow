@@ -1,16 +1,20 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LandingComponent from './components/LandingComponent';
 import SeminarFlowDiagram from './components/SeminarFlowDiagram';
-import LandingPage from './components/LandingPage';
-import DiagramPage from './components/DiagramPage';
+import Layout from './components/Layout';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      {/* <LandingPage/> */}
-      {/* <SeminarFlowDiagram /> */}
-      <DiagramPage/>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Layout><LandingComponent /></Layout>} />
+          <Route path="/diagram" element={<Layout><SeminarFlowDiagram/></Layout>} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
