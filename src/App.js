@@ -14,25 +14,40 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Layout><LandingComponent /></Layout>} />
+          <Route path="/" element={<Layout component={<LandingComponent />} buttonText="분석 시작하기" buttonLink="/question"/>} />
           <Route
             path="/question"
             element={
-              <Layout>
-                <Status
-                  textHead="질의응답 톺아보기."
-                  textBody={
-                    <div className='image-text-container' style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start', marginBottom: '10px'}}>
-                      <img src={ImageClova} alt="" style={{ marginRight: "5px" }} />
-                      <text> 그리고 </text>
-                      <img src={ImageGpt} style={{ marginLeft: "5px", marginRight: "5px" }} alt="" />
-                      <text>를 사용하여 세미나에서 나왔던 모든 질문과 답변을 시간 순서대로 정리하였습니다.</text>
-                    </div>
-                    }
-                />
-                <QuestionCard/>
-              </Layout>} />
-          <Route path="/diagram" element={<Layout><SeminarFlowDiagram/></Layout>} />
+              <Layout
+              component={
+                <>
+                  <Status
+                    textHead="질의응답 톺아보기."
+                    textBody={
+                      <div className='image-text-container' style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start', marginBottom: '40px'}}>
+                        <img src={ImageClova} alt="" style={{ marginRight: "5px" }} />
+                        <text> 그리고 </text>
+                        <img src={ImageGpt} style={{ marginLeft: "5px", marginRight: "5px" }} alt="" />
+                        <text>를 사용하여 세미나에서 나왔던 모든 질문과 답변을 시간 순서대로 정리하였습니다.</text>
+                      </div>
+                      }
+                  />
+                  <QuestionCard/>
+                </>
+                }
+               buttonText="다이어그램으로 확인하기"
+               buttonLink="/diagram"
+              />
+              } />
+          <Route path="/diagram" element={<Layout component={<><Status
+                    textHead="나의 세미나 플로우"
+                    textBody={
+                      <div className='image-text-container' style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', marginBottom: '40px'}}>
+                        <img src={ImageGpt} style={{ marginLeft: "5px", marginRight: "5px" }} alt="" />
+                        <text >를 사용하여 여러 질문이 서로 어떠한 관계를 가지고 있는지 다이어그램으로 나타내 보았습니다.</text>
+                      </div>
+                      }
+                  /><SeminarFlowDiagram/></>}></Layout>} />
         </Routes>
       </div>
     </Router>

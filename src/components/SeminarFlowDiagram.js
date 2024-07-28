@@ -32,8 +32,8 @@ const SeminarFlowDiagram = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen">
-      <div className="w-[800px] h-[700px] p-10 bg-white shadow-2xl rounded-lg">
-        <svg viewBox="0 0 800 720" className="w-full h-auto"> {/* Increased height in viewBox */}
+      <div className="w-[800px] h-auto p-10 bg-white shadow-2xl rounded-lg" style={{ marginTop: '-300px' }}>
+        <svg viewBox="0 0 800 720" className="w-full h-auto" > {/* Increased height in viewBox */}
           
           <g transform="translate(0, 700)"> {/* Adjust this to position time scale within new layout */}
             {[...Array(10)].map((_, i) => (
@@ -78,36 +78,36 @@ const SeminarFlowDiagram = () => {
             <line x1="100" y1="650" x2="700" y2="650" stroke="black" strokeWidth="2" />
           </g>
           
-          <path d="M 100 50 C 150 50, 150 150, 200 150" stroke="black" strokeWidth="2" fill="none" className="line-animation"/>
-          <path d="M 270 250 C 300 250, 330 350, 360 350" stroke="black" strokeWidth="2" fill="none" className="line-animation" />
-          <path d="M 480 450 A 20 20 0 0 1 520 450" stroke="black" strokeWidth="2" fill="none" className="line-animation"/>
-          <path d="M 400 350 C 430 350, 430 150, 500 150" stroke="black" strokeWidth="2" fill="none" className="line-animation" />
-          <path d="M 520 450 C 545 450, 565 550, 570 550" stroke="black" strokeWidth="2" fill="none" className="line-animation" />
-          <path d="M 520 450 C 600 450, 680 600, 700 650" stroke="black" strokeWidth="2" fill="none" className="line-animation" />
-          <path d="M 200 150 A 20 20 0 0 1 310 150" stroke="black" strokeWidth="2" fill="none" className="line-animation"/>
-          <path d="M 570 550 A 20 20 0 0 1 620 550" stroke="black" strokeWidth="2" fill="none" className="line-animation"/>
+          <path d="M 100 50 C 150 50, 150 150, 200 150" stroke="#353535" strokeWidth="2" fill="none" className="line-animation"/>
+          <path d="M 270 250 C 300 250, 330 350, 360 350" stroke="#353535" strokeWidth="2" fill="none" className="line-animation" />
+          <path d="M 480 450 A 20 20 0 0 1 520 450" stroke="#353535" strokeWidth="2" fill="none" className="line-animation"/>
+          <path d="M 400 350 C 430 350, 430 150, 500 150" stroke="#353535" strokeWidth="2" fill="none" className="line-animation" />
+          <path d="M 520 450 C 545 450, 565 550, 570 550" stroke="#353535" strokeWidth="2" fill="none" className="line-animation" />
+          <path d="M 520 450 C 600 450, 680 600, 700 650" stroke="#353535" strokeWidth="2" fill="none" className="line-animation" />
+          <path d="M 200 150 A 20 20 0 0 1 310 150" stroke="#353535" strokeWidth="2" fill="none" className="line-animation"/>
+          <path d="M 570 550 A 20 20 0 0 1 620 550" stroke="#353535" strokeWidth="2" fill="none" className="line-animation"/>
 
           
           {/* Circles */}
-          <circle cx="100" cy="50" r="10" fill="#99ccff"
+          <circle cx="100" cy="50" r="10" fill="#5AC1A7"
             onMouseEnter={(e) => showTooltip(e, 'Page 1 Start', 100, 50)} 
             onMouseLeave={hideTooltip}
             onClick={(e) => toggleTooltip(e, 'Page 1 Start', 100, 50)}
             className="circle-animation"
           />
-          <circle cx="200" cy="150" r="10" fill="#99ccff" className="circle-animation"/>
-          <circle cx="310" cy="150" r="10" fill="#99ccff" className="circle-animation"/>
-          <circle cx="270" cy="250" r="10" fill="#99ccff" className="circle-animation"/>
-          <circle cx="340" cy="250" r="10" fill="#99ccff" className="circle-animation"/>
-          <circle cx="360" cy="350" r="10" fill="#99ccff" className="circle-animation"/>
-          <circle cx="400" cy="350" r="10" fill="#99ccff" className="circle-animation"/>
-          <circle cx="500" cy="150" r="10" fill="#99ccff" className="circle-animation"/>
-          <circle cx="480" cy="450" r="10" fill="#99ccff" className="circle-animation"/>
-          <circle cx="520" cy="450" r="10" fill="#99ccff" className="circle-animation"/>
-          <circle cx="570" cy="550" r="10" fill="#99ccff" className="circle-animation"/>
-          <circle cx="595" cy="550" r="10" fill="#99ccff" className="circle-animation"/>
-          <circle cx="620" cy="550" r="10" fill="#99ccff" className="circle-animation"/>
-          <circle cx="700" cy="650" r="10" fill="#99ccff" className="circle-animation"/>
+          <circle cx="200" cy="150" r="10" fill="#5AC1A7" className="circle-animation"/>
+          <circle cx="310" cy="150" r="10" fill="#5AC1A7" className="circle-animation"/>
+          <circle cx="270" cy="250" r="10" fill="#5AC1A7" className="circle-animation"/>
+          <circle cx="340" cy="250" r="10" fill="#5AC1A7" className="circle-animation"/>
+          <circle cx="360" cy="350" r="10" fill="#5AC1A7" className="circle-animation"/>
+          <circle cx="400" cy="350" r="10" fill="#5AC1A7" className="circle-animation"/>
+          <circle cx="500" cy="150" r="10" fill="#5AC1A7" className="circle-animation"/>
+          <circle cx="480" cy="450" r="10" fill="#5AC1A7" className="circle-animation"/>
+          <circle cx="520" cy="450" r="10" fill="#5AC1A7" className="circle-animation"/>
+          <circle cx="570" cy="550" r="10" fill="#5AC1A7" className="circle-animation"/>
+          <circle cx="595" cy="550" r="10" fill="#5AC1A7" className="circle-animation"/>
+          <circle cx="620" cy="550" r="10" fill="#5AC1A7" className="circle-animation"/>
+          <circle cx="700" cy="650" r="10" fill="#5AC1A7" className="circle-animation"/>
 
           </svg>
         

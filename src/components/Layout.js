@@ -12,7 +12,7 @@ const navigation = [
   { name: 'Team', href: '/' },
 ]
 
-export default function Layout({children}) {
+export default function Layout({component, buttonText, buttonLink}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
@@ -113,10 +113,26 @@ export default function Layout({children}) {
             className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
           />
         </div>
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-          {/* Children Component */}
-          {children}
+        <div className="mx-auto max-w-2xl py-10 sm:py-22 lg:py-34">
+          {/* component Component */}
+          {component}
         </div>
+        {
+          buttonText
+          ?<div className="flex items-center justify-center gap-x-6">
+          <a
+            href={buttonLink}
+            className="rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            style={{ backgroundColor: 'rgba(118, 32, 214, 1)', marginTop: '20px', opacity: "0.9"}}
+          >
+            {buttonText}
+          </a>
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-900" style={{marginTop: '20px'}}>
+            Learn more <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        :<></>
+        }
         <div
           aria-hidden="true"
           className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"

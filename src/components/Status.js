@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function Example({textHead, textBody}) {
   return (
-    <div className="text-center">
+    <div className="text-center mt-28 ">
       <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl">
        {textHead}
       </h1>
