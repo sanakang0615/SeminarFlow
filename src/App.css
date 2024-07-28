@@ -141,3 +141,37 @@ svg {
 .fadeInLeft:nth-child(5) { animation-delay: 0.5s; }
 .fadeInLeft:nth-child(6) { animation-delay: 0.6s; }
 /* Continue as needed */
+
+.image-text-container {
+  display: flex;
+  align-items: center;
+  color: black; /* Text color */
+  font-size: 17px; /* Adjust font size as needed */
+}
+
+.image-text-container img {
+  height: 30px; /* Adjust the height to align with your design */
+  width: auto;
+  margin-right: 5px; /* Space between images and between image and text */
+}
+
+.image-text-container .text {
+  white-space: normal; /* Ensures the text stays in one line */
+}
+
+@keyframes fadeInQuestion {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInQuestion {
+  opacity: 0;
+  animation: fadeIn 2s ease-out forwards;
+}
+
