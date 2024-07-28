@@ -3,13 +3,13 @@
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import zigzag from '../assets/zigzag.png'
+import water from '../assets/water.png'
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Documentation', href: '#' },
-  { name: 'Team', href: '#' },
+  { name: 'Product', href: '/' },
+  { name: 'Features', href: '/' },
+  { name: 'Documentation', href: '/' },
+  { name: 'Team', href: '/' },
 ]
 
 export default function Layout({children}) {
@@ -20,12 +20,12 @@ export default function Layout({children}) {
       <header className="absolute inset-x-0 top-0 z-50">
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Seminar Flow</span>
               <img
                 alt="Logo"
-                src={zigzag}
-                className="h-12 w-auto"
+                src={water}
+                className="h-9 w-auto"
               />
             </a>
           </div>
@@ -60,7 +60,7 @@ export default function Layout({children}) {
                 <span className="sr-only">Your Company</span>
                 <img
                   alt=""
-                  src="https://tailzigzagui.com/img/logos/mark.svg?color=indigo&shade=600"
+                  src="https://tailwaterui.com/img/logos/mark.svg?color=indigo&shade=600"
                   className="h-8 w-auto"
                 />
               </a>
