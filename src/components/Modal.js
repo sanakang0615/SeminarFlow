@@ -37,10 +37,10 @@ const Modal = ({ isOpen, content = [], onClose }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="p-5">
-          <h3 className="text-lg font-medium leading-6 text-gray-900"> 질문 상세 </h3>
+          {/* <h3 className="text-xl font-medium leading-6 text-gray-900 ml-7"> 질문 상세 </h3> */}
           <div className="mt-2" style={{ marginTop: '12px' }}>
             {content.map((detail, index) => (
-              <div key={index} className="py-2">
+              <div key={index}>
                 <div className="flex items-center p-4 rounded-lg hover:bg-gray-100 cursor-pointer transition-all">
                   {/* <div className="flex-shrink-0">
                     <PiPlantThin className="text-4xl text-gray-500" />
