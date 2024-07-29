@@ -22,7 +22,7 @@ function App() {
               component={
                 <>
                   <Status
-                    textHead="질의응답 톺아보기."
+                    textHead="질의응답 톺아보기"
                     textBody={
                       <div className='image-text-container' style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start', marginBottom: '40px'}}>
                         <img src={ImageClova} alt="" style={{ marginRight: "5px" }} />

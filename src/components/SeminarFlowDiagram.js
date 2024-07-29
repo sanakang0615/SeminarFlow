@@ -23,7 +23,7 @@ const SeminarFlowDiagram = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen">
-      <div className="w-[800px] h-auto p-10 bg-white shadow-2xl rounded-lg" style={{ marginTop: '-300px' }}>
+      <div className="w-[800px] h-auto p-10 bg-white shadow-2xl rounded-lg" style={{ marginTop: '-200px' }}>
         <svg viewBox="0 0 800 720" className="w-full h-auto" > {/* Increased height in viewBox */}
           
           <g transform="translate(0, 700)"> {/* Adjust this to position time scale within new layout */}

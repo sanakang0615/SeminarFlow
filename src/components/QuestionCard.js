@@ -1,4 +1,7 @@
-import React from 'react';
+// QuestionCard.js
+
+import React, { useState, useEffect } from 'react';
+import { BiArchiveOut } from 'react-icons/bi';
 
 const data = [
   { id: 1, action: "이 실험의 종속 변수는 무엇인가요?", comment: "앱 내 페이지 뷰에서는 폴리 기능이 Treated 그룹에서만 존재하기 때문에, 해당 기능에서 집계된 뷰 카운트는 제외한 값을 사용했습니다.",date: "06:30" },
@@ -10,8 +13,28 @@ const data = [
 ];
 
 function QuestionList() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 300); // 0.3초 후에 로딩
+
+    return () => clearTimeout(timer); // 컴포넌트 언마운트 시 타이머 정리
+  }, []);
+
+  if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
+        <div role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex items-center justify-center min-h-screen">
       <div className="w-[800px] h-auto p-10 bg-white shadow-2xl rounded-lg">
         {data.map((item, index) => (
           <div key={item.id} className={`relative mb-4 fadeInQuestion`} style={{ animationDelay: `${index * 0.2}s` }}>
@@ -35,8 +58,8 @@ function QuestionList() {
           </div>
         ))}
       </div>
-      </div>
-      );
+    </div>
+  );
 }
 
 export default QuestionList;
