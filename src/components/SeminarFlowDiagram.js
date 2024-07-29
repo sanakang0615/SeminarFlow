@@ -1,34 +1,25 @@
 // src/SeminarFlowDiagram.js
 import React, { useState } from 'react';
 import ContentDividers from './ContentDividers';
+import Modal from './Modal';
 
 const SeminarFlowDiagram = () => {
-  const [tooltip, setTooltip] = useState({ visible: false, text: '', x: 0, y: 0 });
+  const data = [
+    { label: '슬라이드 번호', value: '3' },
+    { label: '슬라이드 주제', value: 'Research Questions' },
+    { label: '질문한 사람', value: 'Anonymous 3' },
+    { label: '질문 내용', value: '이 실험에서 Treatment Group과 Control Group의 차이는 이 새로운 기능을 사용했는지의 여부인가요?' },
+    { label: '연관 질문', value: '이 질문에 대한 답변에 기반하여 두 번째 질문이 제기됩니다.' },
+    { label: '연관 이유', value: '이 질문은 본 연구의 실험세팅에서 Treatment와 Control Group간의 차이를 명확히 하기 위해 제기되었습니다. 이 질문에 대한 답변을 통해 청중은 이 답변을 통해 청중은 Treatment Group이 어플리케이션의 새로운 기능을 사용할 수 있었을 뿐만 아니라 기존의 모든 기능 또한 사용할 수 있었음을 알게 됩니다. 따라서 이 답변에 바로 이어서 두 번째 질문이 나오게 되었습니다. Treatment Group이 기존 기능과 새로운 기능을 모두 사용할 수 있었다는 점을 강조하며, 이에 따라 이 새로운 기능의 수용률(acceptance rate)을 확인할 필요성을 제기합니다. 이는 Treatment Group이 새로운 기능을 얼마나 수용하고 실제로 사용했는지를 평가하기 위한 중요한 지표가 될 수 있습니다.' }
+  ];
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState([]);
 
-  // Function to show tooltip
-  const showTooltip = (e, text, cx, cy) => {
-      const svgRect = e.target.nearestViewportElement.getBoundingClientRect();
-      setTooltip({
-          visible: true,
-          text: text,
-          x: svgRect.left + cx - window.scrollX,
-          y: svgRect.top + cy + 20 - window.scrollY
-      });
+  const toggleModal = (content) => {
+    setIsModalOpen(!isModalOpen);
+    setModalContent(content || []); // Ensure content is never undefined
   };
-
-  // Function to hide tooltip
-  const hideTooltip = () => {
-      setTooltip({ visible: false });
-  };
-
-  // Function to toggle tooltip on click
-  const toggleTooltip = (e, text, cx, cy) => {
-      if (tooltip.visible) {
-          hideTooltip();
-      } else {
-          showTooltip(e, text, cx, cy);
-      }
-  };
+  
 
   return (
     <div className="flex items-center justify-center min-h-screen">
@@ -90,9 +81,7 @@ const SeminarFlowDiagram = () => {
           
           {/* Circles */}
           <circle cx="100" cy="50" r="10" fill="#5AC1A7"
-            onMouseEnter={(e) => showTooltip(e, 'Page 1 Start', 100, 50)} 
-            onMouseLeave={hideTooltip}
-            onClick={(e) => toggleTooltip(e, 'Page 1 Start', 100, 50)}
+            onClick={() => toggleModal(data)}
             className="circle-animation"
           />
           <circle cx="200" cy="150" r="10" fill="#5AC1A7" className="circle-animation"/>
@@ -110,28 +99,8 @@ const SeminarFlowDiagram = () => {
           <circle cx="700" cy="650" r="10" fill="#5AC1A7" className="circle-animation"/>
 
           </svg>
+          <Modal isOpen={isModalOpen} content={modalContent} onClose={() => setIsModalOpen(false)} />
         
-        {tooltip.visible && (
-        <div 
-          className="absolute"
-          style={{ left: `${tooltip.x}px`, top: `${tooltip.y}px` }}
-        >
-          <ContentDividers
-            item={{
-              id: 1,
-              details: [
-                { label: '슬라이드 번호', value: '3' },
-                { label: '슬라이드 주제', value: 'Research Questions' },
-                { label: '질문한 사람', value: 'Anonymous 3' },
-                { label: '질문 내용', value: '이 실험에서 Treatment Group과 Control Group의 차이는 이 새로운 기능을 사용했는지의 여부인가요?' },
-                { label: '연관 질문', value: '이 질문에 대한 답변에 기반하여 두 번째 질문이 제기됩니다.' },
-                { label: '연관 이유', value: '이 질문은 본 연구의 실험세팅에서 Treatment와 Control Group간의 차이를 명확히 하기 위해 제기되었습니다. 이 질문에 대한 답변을 통해 청중은 이 답변을 통해 청중은 Treatment Group이 어플리케이션의 새로운 기능을 사용할 수 있었을 뿐만 아니라 기존의 모든 기능 또한 사용할 수 있었음을 알게 됩니다. 따라서 이 답변에 바로 이어서 두 번째 질문이 나오게 되었습니다. Treatment Group이 기존 기능과 새로운 기능을 모두 사용할 수 있었다는 점을 강조하며, 이에 따라 이 새로운 기능의 수용률(acceptance rate)을 확인할 필요성을 제기합니다. 이는 Treatment Group이 새로운 기능을 얼마나 수용하고 실제로 사용했는지를 평가하기 위한 중요한 지표가 될 수 있습니다.' }
-              ]
-            }}
-            {...tooltip.question}
-          />
-                  </div>
-      )}
       </div>
     </div>
   );
